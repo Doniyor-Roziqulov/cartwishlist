@@ -100,3 +100,101 @@ export const middlelist = [
         link: "Shop Now",
     },
 ];
+
+import bestimg from "@/images/icon1.svg";
+
+export const bestlist = [
+    {
+        img: bestimg,
+        title: "Best prices & offers",
+        text: "Orders $50 or more",
+    },
+    {
+        img: bestimg,
+        title: "Free delivery",
+        text: "24/7 amazing services",
+    },
+    {
+        img: bestimg,
+        title: "Great daily deal",
+        text: "When you sign up",
+    },
+    {
+        img: bestimg,
+        title: "Wide assortment",
+        text: "Mega Discounts",
+    },
+    {
+        img: bestimg,
+        title: "Easy returns",
+        text: "Within 30 days",
+    },
+];
+
+import loc from "@/images/loc.svg";
+import contact from "@/images/contact.svg";
+import email from "@/images/email.svg";
+import clock from "@/images/clock.svg";
+
+export const footerone = [
+    {
+        img: loc,
+        title: "Address:",
+        text: "5171 W Campbell Ave undefined Kent, Utah 53127 United States",
+    },
+    {
+        img: contact,
+        title: "Call Us:",
+        text: "(+91) - 540-025-124553",
+    },
+    {
+        img: email,
+        title: "Email:",
+        text: "sale@Nest.com",
+    },
+    {
+        img: clock,
+        title: "Hours:",
+        text: "10:00 - 18:00, Mon - Sat",
+    },
+];
+
+export const footertwo = [
+    "About Us",
+    "Delivery Information",
+    "Privacy Policy",
+    "Terms & Conditions",
+    "Contact Us",
+    "Support Center",
+    "Careers",
+];
+
+export const footerthere = [
+    "Sign In",
+    "View Cart",
+    "My Wishlist",
+    "Track My Order",
+    "Help Ticket",
+    "Shipping Details",
+    "Compare products",
+];
+
+export const footerfour = [
+    "Become a Vendor",
+    "Affiliate Program",
+    "Farm Business",
+    "Farm Careers",
+    "Our Suppliers",
+    "Accessibility",
+    "Promotions",
+];
+
+export const footerfive = [
+    "Milk & Flavoured Milk",
+    "Butter and Margarine",
+    "Eggs Substitutes",
+    "Marmalades",
+    "Sour Cream and Dips",
+    "Tea & Kombucha",
+    "Cheese",
+];

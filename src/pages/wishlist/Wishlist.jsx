@@ -1,3 +1,4 @@
+import Empty from "@/components/empty/Empty";
 import Products from "@/components/products/Products";
 import { useStateValue } from "@/context";
 import React from "react";
@@ -7,8 +8,14 @@ const Wishlist = () => {
     return (
         <section>
             <div className="container  px-[10px] lg:w-[1500px] lg:px-5 mx-auto">
-                <h2>Wishlist</h2>
-                <Products data={data.wishlist} />
+                {data.wishlist.length ? (
+                    <Products data={data.wishlist} />
+                ) : (
+                    <Empty
+                        url="https://www.imagineersstudio.com/images/emptywishlist.jpg"
+                        title="Favorites are empty"
+                    />
+                )}
             </div>
         </section>
     );

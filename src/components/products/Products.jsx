@@ -3,19 +3,25 @@ import { FaStar } from "react-icons/fa6";
 import { LuShoppingCart } from "react-icons/lu";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { useStateValue } from "@/context";
+import { IoIosHeart } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Products = ({ data }) => {
-    const [_, dispatch] = useStateValue();
+    const [{ wishlist }, dispatch] = useStateValue();
     let items = data?.map((product) => (
-        <li className="px-[21px] pb-[21px] rounded-2xl  border border-[#ECECEC] relative">
-            <div className="w-[240px]" key={product.id}>
-                <div className="w-full h-[246px]">
-                    <img
-                        className="w-full h-full object-contain hover:scale-105 transition-all"
-                        src={product.images[0]}
-                        alt=""
-                    />
-                </div>
+        <li
+            className="px-[21px] pb-[21px] rounded-2xl  border border-[#ECECEC] relative"
+            key={product.id}>
+            <div className="w-[240px]">
+                <Link to={`/product/${product.id}`}>
+                    <div className="w-full h-[246px]">
+                        <img
+                            className="w-full h-full object-contain hover:scale-105 transition-all"
+                            src={product.images[0]}
+                            alt="img"
+                        />
+                    </div>
+                </Link>
                 <strong className="block text-xs text-[#ADADAD] mb-2 mt-1">
                     {product.title}
                 </strong>
@@ -49,12 +55,20 @@ const Products = ({ data }) => {
                 onClick={() =>
                     dispatch({ type: "ADD_TO_WISHLIST", payload: product })
                 }
-                className="absolute top-4 right-4 text-2xl text-red-500 active:scale-110">
-                <IoIosHeartEmpty />
+                className="absolute top-4 right-4 text-2xl text-red-500 active:scale-125">
+                {wishlist?.some((item) => item.id === product.id) ? (
+                    <IoIosHeart />
+                ) : (
+                    <IoIosHeartEmpty />
+                )}
             </button>
         </li>
     ));
-    return <ul className="flex justify-between flex-wrap gap-y-7">{items}</ul>;
+    return (
+        <ul className="flex justify-center min-[587px]:justify-between flex-wrap gap-y-7">
+            {items}
+        </ul>
+    );
 };
 
 export default Products;

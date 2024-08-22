@@ -9,9 +9,11 @@ import { IoCartOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 import { FaAngleDown } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { useStateValue } from "@/context";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [{ wishlist }, dispatch] = useStateValue();
     return (
         <header className="py-6">
             <div className="container px-[10px] lg:w-[1500px] lg:px-5 mx-auto">
@@ -19,7 +21,7 @@ const Header = () => {
                     <NavLink to={"/"}>
                         <img src={logo} alt="logo image" />
                     </NavLink>
-                    <div className="hidden lg:flex rounded-md border-2 border-[#BCE3C9] lg:w-[300px] xl:w-[500px] 2xl:w-[822px] items-center">
+                    <div className="hidden lg:flex rounded-md border-2 border-[#BCE3C9] lg:w-[300px] xl:w-[500px] 2xl:w-[800px] items-center">
                         <select name="" id="" className="border-r pr-3">
                             <option className="text-sm" value="All Categories">
                                 All Categories
@@ -58,9 +60,16 @@ const Header = () => {
                         </a>
                         <NavLink
                             to={"/wishlist"}
-                            className="flex items-center gap-x-2 text-[#7E7E7E] text-base">
+                            className="flex items-center gap-x-3 text-[#7E7E7E] text-base relative">
                             <FaRegHeart className="text-black text-xl" />
                             Wishlist
+                            {wishlist.length >= 1 ? (
+                                <sup className="block text-xs text-white font-medium rounded-full bg-[#3BB77E] px-[8px] py-[3px] absolute left-[10px] top-[1px]">
+                                    {wishlist.length}
+                                </sup>
+                            ) : (
+                                <sup className="hidden">{wishlist.length}</sup>
+                            )}
                         </NavLink>
                         <NavLink
                             to={"/cart"}
@@ -69,7 +78,7 @@ const Header = () => {
                             Cart
                         </NavLink>
                         <NavLink
-                            to={"/account"}
+                            to={"/login"}
                             className="flex items-center gap-x-2 text-[#7E7E7E] text-base">
                             <VscAccount className="text-black text-xl" />
                             Account
