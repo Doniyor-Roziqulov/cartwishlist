@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const Category = ({ setCategory, data }) => {
     // console.log(setCategory.data);
@@ -34,4 +34,4 @@ const Category = ({ setCategory, data }) => {
     );
 };
 
-export default Category;
+export default memo(Category);

@@ -5,6 +5,7 @@ import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
 import Login from "./pages/login/Login";
 import Detail from "./pages/detail/Detail";
+import { memo } from "react";
 
 function App() {
     return (
@@ -22,4 +23,4 @@ function App() {
     );
 }
 
-export default App;
+export default memo(App);

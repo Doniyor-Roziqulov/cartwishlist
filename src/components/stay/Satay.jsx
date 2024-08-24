@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Hero from "../hero/Hero";
 
 import men from "@/images/men.png";
@@ -13,4 +13,4 @@ const Satay = () => {
     );
 };
 
-export default Satay;
+export default memo(Satay);

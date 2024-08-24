@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { bestlist } from "@/static";
 
 const Best = () => {
@@ -26,4 +26,4 @@ const Best = () => {
     );
 };
 
-export default Best;
+export default memo(Best);

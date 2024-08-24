@@ -1,5 +1,5 @@
 import Empty from "@/components/empty/Empty";
-import React from "react";
+import React, { memo } from "react";
 
 const Cart = () => {
     return (
@@ -16,4 +16,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default memo(Cart);

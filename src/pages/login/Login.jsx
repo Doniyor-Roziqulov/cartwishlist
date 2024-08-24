@@ -1,8 +1,8 @@
 import Account from "@/components/account/Account";
-import React from "react";
+import React, { memo } from "react";
 
 const Login = () => {
     return <Account />;
 };
 
-export default Login;
+export default memo(Login);

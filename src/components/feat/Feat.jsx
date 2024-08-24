@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { link, smallcart, middilecart } from "./index";
 
 const Feat = () => {
@@ -24,4 +24,4 @@ const Feat = () => {
     );
 };
 
-export default Feat;
+export default memo(Feat);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import logo from "@/images/logo.svg";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import {
@@ -169,4 +169,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default memo(Footer);

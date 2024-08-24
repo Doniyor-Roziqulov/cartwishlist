@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { FaStar } from "react-icons/fa6";
 import { LuShoppingCart } from "react-icons/lu";
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -71,4 +71,4 @@ const Products = ({ data }) => {
     );
 };
 
-export default Products;
+export default memo(Products);

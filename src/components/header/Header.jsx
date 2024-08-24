@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "@/images/logo.svg";
 import { IoLocationOutline } from "react-icons/io5";
@@ -46,8 +46,8 @@ const Header = () => {
                     <div
                         className={
                             menuOpen
-                                ? "flex flex-col gap-y-6 z-10 bg-white pt-9 pb-28 pl-5 pr-7 transition-[0.5s] top-[102px] absolute left-0 md:flex-row md:relative md:p-0 md:top-0 gap-x-5"
-                                : "flex flex-col gap-y-6 z-10 bg-white pt-9 pb-28 pl-5 pr-7 transition-[0.5s] top-[102px] absolute left-[-300px] md:flex-row md:relative md:p-0 md:top-0 md:left-0 md:gap-x-5"
+                                ? "flex flex-col gap-y-6 z-10 bg-white pt-9 pb-52 pl-5 pr-10 transition-[0.5s] top-[102px] absolute left-0 md:flex-row md:relative md:p-0 md:top-0 gap-x-5"
+                                : "flex flex-col gap-y-6 z-10 bg-white pt-9 pb-52 pl-5 pr-10 transition-[0.5s] top-[102px] absolute left-[-300px] md:flex-row md:relative md:p-0 md:top-0 md:left-0 md:gap-x-5"
                         }>
                         <a
                             href="#"
@@ -101,4 +101,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default memo(Header);

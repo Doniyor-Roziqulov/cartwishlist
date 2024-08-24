@@ -35,7 +35,7 @@ const Detail = () => {
 
     return (
         <section className="pt-7 pb-14">
-            <div className="container  max-w-7xl mx-auto px-3 xl:px-0">
+            <div className="container  px-[10px] lg:w-[1500px] lg:px-5 mx-auto">
                 <div className="flex flex-col items-center justify-between gap-y-3 sm:flex-row sm:items-start gap-x-3 pb-4">
                     <div className="w-11/12 ">
                         <div className="sticky top-0 left-0 mb-4">

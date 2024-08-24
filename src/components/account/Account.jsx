@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "@/images/logo.svg";
 
@@ -57,4 +57,4 @@ const Account = () => {
     );
 };
 
-export default Account;
+export default memo(Account);

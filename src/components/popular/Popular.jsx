@@ -1,18 +1,25 @@
-import { useStateValue } from "@/context";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import Products from "../products/Products";
 import { useFatch } from "@/hooks/useFatch";
 import Category from "../category/Category";
 import Skeleton from "../skeleton/Skeleton";
 
 const Popular = () => {
-    // const [data, dispatch] = useStateValue();
+    // const [total, setTotal] = useState(0);
+    const limit = 10;
+    const [offset, setOffset] = useState(1);
     const [category, setCategory] = useState("");
-    const { data: cart, loading } = useFatch(
+    const {
+        data: cart,
+        loading,
+        total,
+    } = useFatch(
         `/products${category ? `/category/${category}` : ""}`,
-        { limit: 10 },
-        [category]
+        { limit: limit * offset },
+        [category, offset]
     );
+    console.log(total);
+
     const { data: categoryData } = useFatch("/products/category-list");
 
     return (
@@ -23,12 +30,19 @@ const Popular = () => {
                         Popular Products
                     </h2>
                 </div>
-                {loading && <Skeleton />}
                 <Category setCategory={setCategory} data={categoryData} />
                 <Products data={cart?.products} />
+                {loading && <Skeleton />}
+                {limit * offset <= total && (
+                    <button
+                        className="text-white text-base py-3 px-8 rounded-xl bg-[#3BB77E] mx-auto block mt-5"
+                        onClick={() => setOffset((p) => p + 1)}>
+                        See more
+                    </button>
+                )}
             </div>
         </section>
     );
 };
 
-export default Popular;
+export default memo(Popular);

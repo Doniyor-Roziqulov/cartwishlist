@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import herobg from "@/images/herobg.png";
 import { TbSend } from "react-icons/tb";
 
@@ -42,4 +42,4 @@ const Hero = ({ title, text, img }) => {
     );
 };
 
-export default Hero;
+export default memo(Hero);

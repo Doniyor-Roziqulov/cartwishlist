@@ -3,7 +3,7 @@ import Feat from "@/components/feat/Feat";
 import Heroone from "@/components/heroone/Heroone";
 import Popular from "@/components/popular/Popular";
 import Satay from "@/components/stay/Satay";
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 
 const Home = () => {
     useEffect(() => {
@@ -20,4 +20,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default memo(Home);

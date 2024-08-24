@@ -8,11 +8,11 @@ const Skeleton = () => {
             <div className="w-full bg-gray-200 h-40 sm:h-56 rounded-2xl"></div>
             <div className="w-4/5 h-7 bg-gray-200 mt-2 rounded-2xl"></div>
             <div className="w-2/5 h-7 bg-gray-200 mt-2 rounded-2xl"></div>
-            <div className="w-full h-9 bg-gray-200 mt-2 rounded-2xl"></div>
+            <div className="w-11/12 h-9 bg-gray-200 mt-2 rounded-2xl"></div>
         </div>
     ));
     return (
-        <ul className="flex flex-wrap justify-between gap-y-4 md:justify-around gap-x-1">
+        <ul className="flex flex-wrap justify-between gap-y-4 gap-x-1">
             {skeletonItem}
         </ul>
     );
