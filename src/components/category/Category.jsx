@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 
 const Category = ({ setCategory, data }) => {
-    // console.log(setCategory.data);
     const list = data?.map((e) => (
         <li
             key={e}

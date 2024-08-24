@@ -18,7 +18,6 @@ const Popular = () => {
         { limit: limit * offset },
         [category, offset]
     );
-    console.log(total);
 
     const { data: categoryData } = useFatch("/products/category-list");
 

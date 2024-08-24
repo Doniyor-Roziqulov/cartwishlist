@@ -45,7 +45,11 @@ const Products = ({ data }) => {
                             $ {product.discountPercentage}
                         </del>
                     </div>
-                    <button className="flex items-center gap-x-1 p-1 text-[#3BB77E] text-sm font-bold lg:py-[10px] lg:px-[20px] rounded bg-[#DEF9EC]">
+                    <button
+                        onClick={() =>
+                            dispatch({ type: "INC_CART", payload: product })
+                        }
+                        className="flex items-center gap-x-1 p-1 text-[#3BB77E] text-sm font-bold lg:py-[10px] lg:px-[20px] rounded bg-[#DEF9EC]">
                         <LuShoppingCart className="text-lg" />
                         <p className="hidden lg:block"> Add</p>
                     </button>

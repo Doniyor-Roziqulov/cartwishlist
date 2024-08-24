@@ -5,8 +5,9 @@ import { useParams } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { FaChevronUp } from "react-icons/fa";
-import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { TfiControlShuffle } from "react-icons/tfi";
+import { useStateValue } from "@/context";
 
 const Detail = () => {
     const { proId } = useParams();
@@ -14,6 +15,7 @@ const Detail = () => {
     const [data, setData] = useState(null);
     const [image, setImage] = useState(0);
     const [inc, setInc] = useState(1);
+    const [{ wishlist }, dispatch] = useStateValue();
 
     useEffect(() => {
         axios
@@ -133,8 +135,21 @@ const Detail = () => {
                                     Add to cart
                                 </p>
                             </button>
-                            <button className="border border-[#f1f1f1] px-4 rounded-md">
-                                <IoIosHeartEmpty className="text-[#7E7E7E] text-2xl" />
+                            <button
+                                onClick={() =>
+                                    dispatch({
+                                        type: "ADD_TO_WISHLIST",
+                                        payload: data,
+                                    })
+                                }
+                                className="border border-[#f1f1f1] px-4 rounded-md">
+                                {wishlist?.some(
+                                    (item) => item.id === data?.id
+                                ) ? (
+                                    <IoIosHeart className="text-[#7E7E7E] text-2xl" />
+                                ) : (
+                                    <IoIosHeartEmpty className="text-[#7E7E7E] text-2xl" />
+                                )}
                             </button>
                             <button className="border border-[#f1f1f1] px-4 rounded-md">
                                 <TfiControlShuffle className="text-[#7E7E7E] text-2xl" />

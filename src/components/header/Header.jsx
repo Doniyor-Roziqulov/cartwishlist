@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "@/images/logo.svg";
 import { IoLocationOutline } from "react-icons/io5";
@@ -10,12 +10,14 @@ import { VscAccount } from "react-icons/vsc";
 import { FaAngleDown } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useStateValue } from "@/context";
+import Search from "../search/Search";
 
-const Header = () => {
+const Header = ({ data }) => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [{ wishlist }, dispatch] = useStateValue();
+    const [{ wishlist, cart }, dispatch] = useStateValue();
+
     return (
-        <header className="py-6">
+        <header className="py-6 fixed z-20 bg-white w-full top-0 left-0">
             <div className="container px-[10px] lg:w-[1500px] lg:px-5 mx-auto">
                 <div className="flex items-center justify-between">
                     <NavLink to={"/"}>
@@ -36,11 +38,23 @@ const Header = () => {
                                 All Categories
                             </option>
                         </select>
-                        <input
-                            className="py-4 pl-4 w-full"
-                            type="search"
-                            placeholder="Search for items..."
-                        />
+                        <Search />
+
+                        <div className="border border-t-0 border-b-0 w-full absolute top-11 left-0 z-10 bg-slate-50 rounded-3xl">
+                            {data?.map((d) => (
+                                <div
+                                    className="flex items-center last:border-b-0 py-2 pl-2 cursor-pointer hover:bg-slate-200 hover:rounded-3xl border-b"
+                                    key={d.id}>
+                                    <img
+                                        className="w-8 h-8 object-contain"
+                                        src={d.images[0]}
+                                        alt="images"
+                                    />
+                                    <h3 className="pl-2">{d.title}</h3>
+                                </div>
+                            ))}
+                        </div>
+
                         <IoSearchOutline className="text-3xl mr-3 text-[#B6B6B6]" />
                     </div>
                     <div
@@ -73,9 +87,16 @@ const Header = () => {
                         </NavLink>
                         <NavLink
                             to={"/cart"}
-                            className="flex items-center gap-x-2 text-[#7E7E7E] text-base">
+                            className="flex items-center gap-x-2 text-[#7E7E7E] text-base relative">
                             <IoCartOutline className="text-black text-2xl" />
                             Cart
+                            {cart.length >= 1 ? (
+                                <sup className="block text-xs text-white font-medium rounded-full bg-[#3BB77E] px-[8px] py-[3px] absolute left-[10px] top-[1px]">
+                                    {cart.length}
+                                </sup>
+                            ) : (
+                                <sup className="hidden">{wishlist.length}</sup>
+                            )}
                         </NavLink>
                         <NavLink
                             to={"/login"}
