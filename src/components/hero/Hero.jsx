@@ -7,7 +7,7 @@ const Hero = ({ title, text, img }) => {
         <section className="pb-16">
             <div className="container px-[10px] lg:w-[1500px] lg:px-5 mx-auto">
                 <div
-                    className="bg-auto lg:bg-cover 2xl:bg-contain bg-no-repeat relative pt-[81px] pb-[80px] lg:pl-[80px] w-full flex justify-center lg:justify-start"
+                    className="bg-auto lg:bg-cover rounded-[30px] 2xl:bg-cover bg-no-repeat relative pt-[81px] pb-[80px] lg:pl-[80px] w-full flex justify-center lg:justify-start"
                     style={{ backgroundImage: `url(${herobg})` }}>
                     <div className="w-[280px] flex flex-col items-center lg:items-start sm:w-[600px]">
                         <h1 className="text-3xl xl:text-6xl font-bold mb-8 text-center md:text-5xl lg:text-start">
@@ -32,9 +32,9 @@ const Hero = ({ title, text, img }) => {
                         </form>
                     </div>
                     <img
-                        className="object-contain hidden 2xl:block absolute bottom-12 right-12"
+                        className="object-contain hidden 2xl:block absolute bottom-0 right-12"
                         src={img}
-                        alt="men"
+                        alt=""
                     />
                 </div>
             </div>

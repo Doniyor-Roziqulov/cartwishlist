@@ -10,11 +10,11 @@ const Products = ({ data }) => {
     const [{ wishlist }, dispatch] = useStateValue();
     let items = data?.map((product) => (
         <li
-            className="px-[21px] pb-[21px] rounded-2xl  border border-[#ECECEC] relative"
+            className="lg:px-[21px] lg:pb-[21px] min-[400px]:px-2 px-1 pb-2 rounded-2xl  border border-[#ECECEC] relative"
             key={product.id}>
-            <div className="w-[240px]">
+            <div className="w-[136px] min-[400px]:w-[170px] min-[500px]:w-[215px] lg:w-[240px]">
                 <Link to={`/product/${product.id}`}>
-                    <div className="w-full h-[246px]">
+                    <div className="w-full h-[140px] min-[500px]:h-[215px]">
                         <img
                             className="w-full h-full object-contain hover:scale-105 transition-all"
                             src={product.images[0]}
@@ -25,7 +25,7 @@ const Products = ({ data }) => {
                 <strong className="block text-xs text-[#ADADAD] mb-2 mt-1">
                     {product.title}
                 </strong>
-                <p className="text-base text-[#253D4E] font-bold text-ellipsis overflow-hidden whitespace-nowrap max-w-full mb-2">
+                <p className="text-sm min-[500px]:text-base text-[#253D4E] font-bold text-ellipsis overflow-hidden whitespace-nowrap max-w-full mb-2">
                     {product.description}
                 </p>
                 <div className="flex items-center gap-x-10">
@@ -38,16 +38,16 @@ const Products = ({ data }) => {
                 </span>
                 <div className="flex justify-between">
                     <div className="flex items-center gap-x-3">
-                        <p className="text-lg font-bold text-[#3BB77E]">
+                        <p className="text-sm min-[500px]:text-lg font-bold text-[#3BB77E]">
                             $ {product.price}
                         </p>
-                        <del className="text-sm font-bold text-[#ADADAD]">
+                        <del className="text-xs min-[500px]:text-sm font-bold text-[#ADADAD]">
                             $ {product.discountPercentage}
                         </del>
                     </div>
-                    <button className="flex items-center gap-x-1 text-[#3BB77E] text-sm font-bold py-[10px] px-[20px] rounded bg-[#DEF9EC]">
+                    <button className="flex items-center gap-x-1 p-1 text-[#3BB77E] text-sm font-bold lg:py-[10px] lg:px-[20px] rounded bg-[#DEF9EC]">
                         <LuShoppingCart className="text-lg" />
-                        Add
+                        <p className="hidden lg:block"> Add</p>
                     </button>
                 </div>
             </div>
@@ -65,7 +65,7 @@ const Products = ({ data }) => {
         </li>
     ));
     return (
-        <ul className="flex justify-center min-[587px]:justify-between flex-wrap gap-y-7">
+        <ul className="flex justify-between min-[330px]:justify-around min-[400px]:justify-between min-[430px]:justify-around min-[587px]:gap-x-1 xl:gap-x-3 min-[520px]:justify-around min-[500px]:justify-between 2xl:gap-x-2 xl:justify-start flex-wrap gap-y-7">
             {items}
         </ul>
     );

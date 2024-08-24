@@ -29,7 +29,7 @@ export const smallcart = smallcarts?.map((e, inx) => (
 
 export const middilecart = middlelist?.map((e, inx) => (
     <li
-        className=" md:bg-cover md:w-[550px] bg-no-repeat pt-12 sm:pt-16 lg:pt-8 pb-12 sm:pb-16 xl:pt-10 xl:pb-12 2xl:pt-16 2xl:bg-contain 2xl:pb-16  2xl:w-[480px] lg:pb-[30px] pl-5 lg:pl-12 w-[300px] sm:w-[400px] lg:w-[320px] xl:w-[410px]"
+        className=" md:bg-cover rounded-[10px] md:w-[550px] bg-no-repeat pt-12 sm:pt-16 lg:pt-8 pb-12 sm:pb-16 xl:pt-10 xl:pb-12 2xl:pt-16 2xl:bg-contain 2xl:pb-16  2xl:w-[480px] lg:pb-[30px] pl-5 lg:pl-12 w-[300px] sm:w-[400px] lg:w-[320px] xl:w-[410px]"
         key={inx}
         style={{ backgroundImage: `url(${e.img})` }}>
         <div className="w-[204px] h-[120px] lg:h-[148px] flex flex-col items-start justify-between">

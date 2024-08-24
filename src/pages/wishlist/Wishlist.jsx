@@ -6,7 +6,7 @@ import React from "react";
 const Wishlist = () => {
     const [data, dispatch] = useStateValue();
     return (
-        <section>
+        <section className="pt-3 pb-10">
             <div className="container  px-[10px] lg:w-[1500px] lg:px-5 mx-auto">
                 {data.wishlist.length ? (
                     <Products data={data.wishlist} />

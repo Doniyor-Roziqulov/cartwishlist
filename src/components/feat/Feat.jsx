@@ -16,7 +16,7 @@ const Feat = () => {
                 <ul className="flex justify-between overflow-x-auto gap-x-3 2xl:overflow-x-hidden 2xl:gap-x-0 mb-11">
                     {smallcart}
                 </ul>
-                <ul className="flex flex-col justify-between items-center gap-y-3 lg:flex-row">
+                <ul className="flex flex-col justify-between  items-center gap-y-3 lg:flex-row">
                     {middilecart}
                 </ul>
             </div>
