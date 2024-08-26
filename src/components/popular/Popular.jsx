@@ -5,7 +5,6 @@ import Category from "../category/Category";
 import Skeleton from "../skeleton/Skeleton";
 
 const Popular = () => {
-    // const [total, setTotal] = useState(0);
     const limit = 10;
     const [offset, setOffset] = useState(1);
     const [category, setCategory] = useState("");

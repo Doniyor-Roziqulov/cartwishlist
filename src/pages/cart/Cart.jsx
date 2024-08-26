@@ -1,10 +1,13 @@
 import Empty from "@/components/empty/Empty";
 import { useStateValue } from "@/context";
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import Mapcart from "./Mapcart";
 
 const Cart = () => {
     const [{ cart }, dispatch] = useStateValue();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <section className="pb-9 pt-7">
             <div className="container">

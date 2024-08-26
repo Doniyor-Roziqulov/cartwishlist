@@ -1,8 +1,11 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "@/images/logo.svg";
 
 const Account = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <section className="pt-8 pb-16">
             <div className="flex items-center justify-center">

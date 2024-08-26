@@ -129,7 +129,14 @@ const Detail = () => {
                                     </button>
                                 </div>
                             </div>
-                            <button className="flex items-center text-white bg-[#3BB77E] py-3 px-3 xl:px-9 rounded-md gap-x-1">
+                            <button
+                                onClick={() =>
+                                    dispatch({
+                                        type: "INC_CART",
+                                        payload: data,
+                                    })
+                                }
+                                className="flex items-center text-white bg-[#3BB77E] py-3 px-3 xl:px-9 rounded-md gap-x-1">
                                 <IoCartOutline className="text-2xl" />
                                 <p className="text-xs lg:text-lg">
                                     Add to cart

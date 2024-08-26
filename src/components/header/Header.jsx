@@ -39,7 +39,6 @@ const Header = ({ data }) => {
                             </option>
                         </select>
                         <Search />
-
                         <div className="border border-t-0 border-b-0 w-full absolute top-11 left-0 z-10 bg-slate-50 rounded-3xl">
                             {data?.map((d) => (
                                 <div

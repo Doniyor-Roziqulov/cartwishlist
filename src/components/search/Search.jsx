@@ -51,10 +51,15 @@ const Search = () => {
                     placeholder="Search for items..."
                 />
             </form>
-
-            <div className="absolute z-10  w-full h-96 overflow-y-auto pt-2 pl-4  flex flex-col">
-                {list}
-            </div>
+            {data === false ? (
+                <div className="absolute z-10 box  w-full h-96  overflow-y-auto pt-2 pl-4  hidden flex-col">
+                    {list}
+                </div>
+            ) : (
+                <div className="absolute z-10 box   w-full max-h-96  overflow-y-auto pt-2 pl-4  flex flex-col">
+                    {list}
+                </div>
+            )}
         </div>
     );
 };
